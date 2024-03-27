@@ -1,0 +1,328 @@
+* {
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  padding-top: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+body {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+header div img {
+  width: 120px;
+  height: 15px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+header {
+  display: flex;
+  margin-right: 10px;
+  z-index: 1;
+
+  justify-content: space-between;
+  position: fixed;
+}
+header a {
+  margin-left: 50px;
+  line-height: 30px;
+  padding: 0;
+  white-space: nowrap;
+  text-align: center;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  color: rgb(34, 34, 34);
+}
+.mdl {
+  margin-left: 200px;
+  position: relative;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  z-index: 5;
+}
+.mdl a:nth-child(6) {
+  margin-right: 100px;
+}
+
+/* .hover{
+    background-color: rgba(128,128,128,0.15);
+    position: absolute;
+    z-index: -1;
+    opacity: 1;
+    transition: all 0.7s;
+    width: 100px; 
+    border-radius: 10px;
+    height: 30px;
+    display: inline-block;
+}
+.mdl a:nth-child(1):hover~.hover{
+    opacity: 1;
+    left: 0;
+    width: 85px;
+} */
+.mdl a:hover {
+  background-color: rgba(128, 128, 128, 0.15);
+  transition: all 0.7s;
+  padding: 5px 10px 5px 10px;
+  border-radius: 10px;
+  height: 30px;
+}
+.main1 {
+  display: flex;
+  overflow: auto;
+  flex: none;
+  width: 100%;
+  height: 100vh;
+  flex-flow: column nowrap;
+  scroll-snap-type: y mandatory;
+}
+.main1 > div {
+  text-align: center;
+  scroll-snap-align: center;
+  flex: none;
+  width: 100%;
+  height: 100%;
+}
+.main1 div img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+}
+.main2 {
+  position: relative;
+}
+.head {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  top: 0;
+  height: 40vh;
+}
+.head h1{
+  font-size: 45px;
+  font-weight: 500;
+  color: rgb(61, 61, 61);
+  padding-bottom: 5px;
+}
+.head h4{
+  font-size: 25px;
+  font-weight: 500;
+  color: rgb(61, 61, 61);
+  padding-bottom: 5px;
+}
+.head span {
+  color: rgb(53, 53, 53);
+  font-size: 17px;
+}
+.head a {
+  color: rgb(53, 53, 53);
+  cursor: pointer;
+  text-decoration: underline;
+}
+.head a:hover {
+  text-decoration-thickness: 2px;
+}
+.login {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+}
+.login div {
+  display: flex;
+  justify-content: center;
+}
+.btn div {
+  align-items: center;
+  margin-right: 15px;
+  margin-left: 15px;
+  width: 250px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+#order {
+  background-color: #393c41;
+  color: white;
+
+}
+#invn {
+  background-color: #eeebeb;
+
+}
+#order,
+#invn {
+  font-size: 14px;
+  font-weight: 500;
+}
+.blank {
+  height: 70px;
+}
+.login .arrow {
+  height: 60px;
+  font-size: 25px;
+  color: rgb(75, 75, 75);
+  animation: updown 1.5s ease infinite;
+}
+
+@keyframes updown {
+  0% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(5px);
+  }
+  20% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(5px);
+  }
+  40% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  80% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.blur {
+  position: absolute;
+  width: 100%;
+  display: none;
+
+  height: 100vh;
+  z-index: 99;
+  transition: all 1s;
+  backdrop-filter: blur(4px);
+  background-color: #393c416e;
+}
+.blur.active{
+    display: block;
+}
+.hdn-side.active{
+    transform: translateX(0);
+    opacity: 1;
+}
+.hdn-side {
+  position: absolute;
+  right: 0;
+  width: 310px;
+  opacity: 0;
+  transform: translateX(320px);
+  transition: all 1.2s;
+  z-index: 100;
+  height: 100vh;
+  overflow: scroll;
+  background-color: white;
+}
+#mark {
+  display: flex;
+  justify-content: end;
+  padding: 30px;
+  background-color: white;
+  position: sticky;
+  z-index: 100;
+  right: 0;
+}
+#mark .fa-xmark {
+  font-size: 25px;
+  padding: 8px 10px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+#mark .fa-xmark:hover {
+  background-color: rgb(233, 233, 233);
+  border-radius: 50%;
+}
+.hdn-cont {
+  padding: 5px 30px;
+  height: 100%;
+}
+.hdn-cont li {
+  padding: 10px 15px;
+  font-size: 15px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+.hdn-cont li:hover {
+  background-color: rgb(233, 233, 233);
+  border-radius: 15px;
+}
+.main .head h1 {
+  animation: showspan 1s;
+}
+.main .head span {
+  animation: show 1.3s;
+}
+@keyframes show {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  40% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  70% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes showspan {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.login #order {
+  animation: order 1s;
+}
+@keyframes order {
+  0% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.login #invn {
+  animation: invn 1s;
+}
+@keyframes invn {
+  0% {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
